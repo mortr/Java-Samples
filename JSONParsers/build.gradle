@@ -1,0 +1,13 @@
+apply plugin:'java'
+apply plugin:'application'
+
+version = '1.0'
+mainClassName = 'by.kirich1409.htp.sample.json.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.3'
+}

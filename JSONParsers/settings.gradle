@@ -1,0 +1,4 @@
+rootProject.name = 'JSON_Parsers'
+
+include 'sample'
+

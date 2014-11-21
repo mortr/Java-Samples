@@ -1,3 +1,14 @@
+#IDEA
+*/out/
+out/
+*/.idea/
+*.iml
+
+# Gradle
+*/build/
+*/.gradle/
+*/local.properties
+
 *.class
 
 # Mobile Tools for Java (J2ME)
