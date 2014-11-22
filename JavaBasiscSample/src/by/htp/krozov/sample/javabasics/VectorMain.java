@@ -6,7 +6,7 @@ import java.util.Random;
 public class VectorMain {
 
     public static void main(String[] args) {
-        int[] vector1 = {0x12, -3, (int) 10e1};
+        int[] vector1 = {0x12F, -3, (int) 10e2, 1212};
         int[] vector2 = {1, 3, 5};
 
         // Сумма двух векторов

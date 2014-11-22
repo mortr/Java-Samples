@@ -10,42 +10,34 @@ public class IfElseMain {
     public static final int[] HTTP_STATUS_CODE = {100, 200, 202, 204, 300, 501};
 
     public static void main(String[] args) {
-        final int statusCode = HTTP_STATUS_CODE[new Random().nextInt(HTTP_STATUS_CODE.length)];
+        int index = new Random().nextInt(HTTP_STATUS_CODE.length);
+        int statusCode = HTTP_STATUS_CODE[index];
 
         String statusGroup;
         if (100 <= statusCode || statusCode < 200) {
             statusGroup = "Informational";
         } else if (200 <= statusCode || statusCode < 300) {
             statusGroup = "Success";
-
         } else if (300 <= statusCode || statusCode < 400) {
             statusGroup = "Redirection";
-
         } else if (400 <= statusCode || statusCode < 500) {
             statusGroup = "Client Error";
-
         } else if (500 <= statusCode || statusCode < 600) {
             statusGroup = "Server Error";
-
         } else {
             statusGroup = null;
         }
 
         if (statusGroup != null) {
-
             String statusMessage;
             if (statusCode == 200) {
                 statusMessage = "OK";
-
             } else if (statusCode == 100) {
                 statusMessage = "Continue";
-
             } else if (statusCode == 202) {
                 statusMessage = "Accepted";
-
             } else if (statusCode == 300) {
                 statusMessage = "Multiple Choices";
-
             } else {
                 statusMessage = null;
             }
