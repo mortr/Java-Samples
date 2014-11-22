@@ -19,9 +19,11 @@ public class MatrixMain {
             }
         }
 
-        for (int row = 0; row < matrix.length; row++) {
-            for (int column = 0; column < matrix[row].length; column++) {
-                System.out.printf("%6.2f", matrix[row][column]);
+        for (double[] row : matrix) { // For each cycle that iterate matrix rows
+            for (double rowItem : row) { // For each cycle that iterate row item
+                System.out.printf("%6.2f", rowItem);    // Format output. Make only 2
+                                                        // digit after point visible
+                                                        //and digits occupy 6 character positions.
             }
             System.out.println();
         }

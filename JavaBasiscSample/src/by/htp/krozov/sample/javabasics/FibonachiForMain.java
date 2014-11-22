@@ -19,25 +19,22 @@ public class FibonachiForMain {
         System.out.println("Max value is " + mavValue);
 
         if (mavValue < 1) { // Impossible compute item for non positive mav value
-            System.out.println("Limit must be positive value. You limit is " + mavValue + '.');
+            System.out.println("Limit must be positive value.");
         } else {
-            if (mavValue >= 1) {
-                System.out.println("fib[1] = 1");
-            }
+            System.out.println("fib[1] = 1");
 
             if (mavValue >= 2) {
                 System.out.println("fib[2] = 2");
             }
 
-            for (
-                    int itemNumber = 3, previousItem = 1, currentItem = 2;
-                    currentItem + previousItem <= mavValue;
-                    ++itemNumber
-                    ) {
+            for (int itemNumber = 3, previousItem = 1, currentItem = 2;
+                 currentItem + previousItem <= mavValue;
+                 ++itemNumber) {
 
                 int temp = previousItem;
                 previousItem = currentItem;
                 currentItem += temp;
+
                 System.out.println("fib[" + itemNumber + "] = " + currentItem);
             }
         }
