@@ -1,5 +1,7 @@
 package by.htp.krozov.sample.javabasics;
 
+import java.util.Random;
+
 public class FibonachiForMain {
 
     /**
@@ -13,8 +15,7 @@ public class FibonachiForMain {
      * ...
      */
     public static void main(String[] args) {
-        final int mavValue = Integer.parseInt(args[0]); // Parse mav value set by user from string to int value
-
+        final int mavValue = new Random().nextInt(Integer.MAX_VALUE);
         System.out.println("Max value is " + mavValue);
 
         if (mavValue < 1) { // Impossible compute item for non positive mav value

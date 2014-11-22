@@ -1,9 +1,11 @@
 package by.htp.krozov.sample.javabasics;
 
+import java.util.Random;
+
 public class FibonachiWhileMain {
 
     public static void main(String[] args) {
-        final int mavValue = Integer.parseInt(args[0]);
+        final int mavValue = new Random().nextInt(Integer.MAX_VALUE);
 
         System.out.println("Max value is " + mavValue);
 
