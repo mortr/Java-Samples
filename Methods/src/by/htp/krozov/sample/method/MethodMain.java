@@ -38,21 +38,4 @@ public class MethodMain {
             }
         }
     }
-
-    /**
-     * Check does target array contains described item.
-     *
-     @param item Item to check.
-     @param array array in what item be searched.
-      *
-      *  @return True - if item was found in array, else - false.
-     */
-    public boolean hastItem(String item, String[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (item.equals(array[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
