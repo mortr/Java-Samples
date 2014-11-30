@@ -1,52 +1,47 @@
-package by.kirich1409.htp.sample.json.model;
+package by.kirich1409.htp.sample.json.model.alter;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by krozov on 17.11.14.
  */
 public class User {
+    private static final String JSON_PROP_REGISTER_DATE = "register_date";
+
     private String name;
-
-    @JsonProperty("register_date")
     private String registerDate;
-
     private List<Order> orders;
-
     private String email;
+
+    public User(
+            @JsonProperty("name") String name,
+            @JsonProperty(JSON_PROP_REGISTER_DATE) String registerDate,
+            @JsonProperty("orders") List<? extends Order> orders,
+            @JsonProperty("email") String email) {
+        this.name = name;
+        this.registerDate = registerDate;
+        this.orders = new ArrayList<>(orders);
+        this.email = email;
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @JsonProperty(JSON_PROP_REGISTER_DATE)
     public String getRegisterDate() {
         return registerDate;
-    }
-
-    public void setRegisterDate(String registerDate) {
-        this.registerDate = registerDate;
     }
 
     public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     @Override
