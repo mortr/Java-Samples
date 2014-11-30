@@ -1,7 +1,7 @@
 #IDEA
 */out/
 out/
-*/.idea/
+*.idea/
 *.iml
 
 # Gradle
