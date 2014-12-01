@@ -1,7 +1,7 @@
-package by.htp.kirich1409.sample.classes;
+package by.htp.krozov.sample.onlinestore;
 
-import by.htp.kirich1409.sample.classes.model.Order;
-import by.htp.kirich1409.sample.classes.model.User;
+import by.htp.krozov.sample.onlinestore.model.Order;
+import by.htp.krozov.sample.onlinestore.model.User;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package by.htp.kirich1409.sample.classes.model;
+package by.htp.krozov.sample.onlinestore.model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,6 +21,12 @@ public class User {
 
     public void addOrder(Order order) {
         this.orders.add(order);
+    }
+
+    public void addOrder(String id, String name) {
+        this.orders.add(
+                new Order(id, name, new Date())
+        );
     }
 
     public List<Order> getOrders() {
@@ -59,8 +65,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "nickname='" + nickname + '\'' +
-                '}';
+        return nickname;
     }
 }
