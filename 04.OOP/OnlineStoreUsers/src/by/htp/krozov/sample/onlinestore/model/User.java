@@ -80,13 +80,24 @@ public class User {
     /**
      * User contacts information.
      */
-    public static class Contacts {
+    public class Contacts {
         private String mobilePhone;
         private String email;
         private String skype;
 
         public Contacts(String email) {
             this.email = email;
+        }
+
+        /**
+         * Make skype call to user, if he has set it.
+         */
+        public void skypeCall() {
+            if (skype != null) {
+                System.out.printf("Call to '%s'", User.this.toString());
+            } else {
+                System.out.println("Can't call to skype. User doesn't set it.");
+            }
         }
 
         public String getMobilePhone() {

@@ -12,6 +12,8 @@ public class Main {
         User user = new User("user_1", "Jack Smith", new Date(), "testmail@gmail.com");
         user.addOrder(new Order("order_1", "Test order", new Date()));
 
+        user.getContacts().skypeCall();
+
         Order order2 = new Order("order_2", "Test order 2", new Date());
         order2.setDelivered(true);
         user.addOrder(order2);
