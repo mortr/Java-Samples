@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        User user = new User("user_1", "Jack Smith", new Date());
+        User user = new User("user_1", "Jack Smith", new Date(), );
         user.addOrder(new Order("order_1", "Test order", new Date()));
 
         Order order2 = new Order("order_2", "Test order 2", new Date());

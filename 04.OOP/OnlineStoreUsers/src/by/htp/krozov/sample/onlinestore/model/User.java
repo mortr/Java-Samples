@@ -5,18 +5,23 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by krozov on 30.11.14.
+ * Online store user representation.
+ *
+ * @author Kirill Rozov
+ * @created 30.11.14
  */
 public class User {
     private final List<Order> orders = new ArrayList<Order>();
     private String nickname;
     private String name;
     private Date registrationDate;
+    private final Contacts contacts;
 
-    public User(String nickname, String name, Date registrationDate) {
+    public User(String nickname, String name, Date registrationDate, String email) {
         this.nickname = nickname;
         this.name = name;
         this.registrationDate = registrationDate;
+        contacts = new Contacts(email);
     }
 
     public void addOrder(Order order) {
@@ -27,6 +32,10 @@ public class User {
         this.orders.add(
                 new Order(id, name, new Date())
         );
+    }
+
+    public Contacts getContacts() {
+        return contacts;
     }
 
     public List<Order> getOrders() {
@@ -66,5 +75,42 @@ public class User {
     @Override
     public String toString() {
         return nickname;
+    }
+
+    /**
+     * User contacts information.
+     */
+    public static class Contacts {
+        private String mobilePhone;
+        private String email;
+        private String skype;
+
+        public Contacts(String email) {
+            this.email = email;
+        }
+
+        public String getMobilePhone() {
+            return mobilePhone;
+        }
+
+        public void setMobilePhone(String mobilePhone) {
+            this.mobilePhone = mobilePhone;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getSkype() {
+            return skype;
+        }
+
+        public void setSkype(String skype) {
+            this.skype = skype;
+        }
     }
 }
