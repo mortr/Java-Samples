@@ -13,6 +13,10 @@ public class Vector3D extends Vector {
         this.z = z;
     }
 
+    public Vector3D(Vector vector) {
+        super(vector.getX(), vector.getY());
+    }
+
     public int getZ() {
         return z;
     }
