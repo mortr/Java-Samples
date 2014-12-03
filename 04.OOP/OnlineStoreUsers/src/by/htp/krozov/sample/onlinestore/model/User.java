@@ -78,6 +78,17 @@ public class User {
     }
 
     /**
+     * Make skype call to user, if he has set it.
+     */
+    public void skypeCall() {
+        if (contacts.skype != null) {
+            System.out.printf("Call to '%s'", this);
+        } else {
+            System.out.println("Can't call to skype. User doesn't set it.");
+        }
+    }
+
+    /**
      * User contacts information.
      */
     public class Contacts {
@@ -87,17 +98,6 @@ public class User {
 
         public Contacts(String email) {
             this.email = email;
-        }
-
-        /**
-         * Make skype call to user, if he has set it.
-         */
-        public void skypeCall() {
-            if (skype != null) {
-                System.out.printf("Call to '%s'", User.this.toString());
-            } else {
-                System.out.println("Can't call to skype. User doesn't set it.");
-            }
         }
 
         public String getMobilePhone() {
