@@ -3,7 +3,7 @@ package by.htp.krozov.sample.figures.model;
 /**
  * Created by krozov on 03.12.14.
  */
-public class Line {
+public final class Line {
     private Point pointA;
     private Point pointB;
 

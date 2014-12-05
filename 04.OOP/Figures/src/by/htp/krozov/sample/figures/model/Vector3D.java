@@ -18,7 +18,7 @@ public class Vector3D extends Vector {
     }
 
     public int scalarProduct(@NotNull Vector3D v) {
-        return super.scalarProduct(v) + v.z * this.z;
+        return super.scalarProduct(v) + v.z * z;
     }
 
     @Override

@@ -3,7 +3,7 @@ package by.htp.krozov.sample.figures.model;
 /**
  * Created by krozov on 03.12.14.
  */
-public class Triangle implements Figure {
+public class Triangle extends Figure {
     private Point pointA;
     private Point pointB;
     private Point pointC;

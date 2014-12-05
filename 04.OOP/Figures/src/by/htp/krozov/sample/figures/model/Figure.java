@@ -1,11 +1,24 @@
 package by.htp.krozov.sample.figures.model;
 
 /**
- * Figure in 2D.
+ * Created by krozov on 05.12.14.
  */
-public interface Figure {
+public abstract class Figure {
+    private final String name;
 
-    double square();
+    public Figure() {
+        name = "Figure";
+    }
 
-    double perimeter();
+    public Figure(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract double square();
+
+    public abstract double perimeter();
 }
