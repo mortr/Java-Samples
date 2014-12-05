@@ -1,6 +1,6 @@
 package by.htp.krozov.sample.figures.model;
 
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Vector in 2D.

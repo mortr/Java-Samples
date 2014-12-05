@@ -8,9 +8,6 @@ import by.htp.krozov.sample.figures.model.Square;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by krozov on 05.12.14.
- */
 public class Main {
     public static void main(String[] args) {
         Figure[] figures = {

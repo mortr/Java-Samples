@@ -1,8 +1,5 @@
 package by.htp.krozov.sample.figures.model;
 
-/**
- * Created by krozov on 05.12.14.
- */
 public class Circle extends Figure {
     private Point center;
     private double radius;
