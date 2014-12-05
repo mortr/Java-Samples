@@ -5,11 +5,16 @@ package by.htp.krozov.sample.figures.model;
  */
 public class Rectangle extends Figure {
     // Top left point
-    private Point topLeftPoint;
+    protected Point topLeftPoint;
     // bottom right point
-    private Point bottomRightPoint;
+    protected Point bottomRightPoint;
 
     public Rectangle(Point topLeftPoint, Point bottomRightPoint) {
+        if(topLeftPoint.getX() < bottomRightPoint.getX()
+                || topLeftPoint.getY() > bottomRightPoint.getY()) {
+            throw new RuntimeException("Illegal points for rectangle.");
+        }
+
         this.topLeftPoint = topLeftPoint;
         this.bottomRightPoint = bottomRightPoint;
     }
