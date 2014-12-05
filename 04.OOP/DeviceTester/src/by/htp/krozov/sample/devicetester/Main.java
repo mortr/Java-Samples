@@ -1,5 +1,6 @@
 package by.htp.krozov.sample.devicetester;
 
+import by.htp.krozov.sample.devicetester.model.Device;
 import by.htp.krozov.sample.devicetester.model.MobilePhone;
 
 /**
@@ -10,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         DeviceTester tester = new DeviceTester();
 
-        MobilePhone nexus5Device = new MobilePhone("LG", "Nexus 5", "adasdas", "1212fa");
+        Device nexus5Device = new MobilePhone("LG", "Nexus 5", "test_serial", "1212fa");
         tester.test(nexus5Device);
     }
 }

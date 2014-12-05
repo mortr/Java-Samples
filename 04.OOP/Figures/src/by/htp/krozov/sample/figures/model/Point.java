@@ -34,6 +34,10 @@ public class Point {
 
     }
 
+    public double distance(Point point) {
+        return Math.hypot(point.x - x, point.y - y);
+    }
+
     @Override
     public int hashCode() {
         int result = x;
