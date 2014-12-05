@@ -5,7 +5,7 @@ public class Square extends Rectangle {
     private final int width;
 
     public Square(Point topLeftPoint, Point bottomRightPoint) {
-        super(topLeftPoint, bottomRightPoint);
+        super("Square", topLeftPoint, bottomRightPoint);
         if (super.width() != super.height()) {
             throw new RuntimeException("Can't be square");
         }
@@ -13,7 +13,7 @@ public class Square extends Rectangle {
     }
 
     public Square(Point topLeftPoint, int width) {
-        super(topLeftPoint, new Point(topLeftPoint.getX() + width, topLeftPoint.getY() + width));
+        super("Square", topLeftPoint, new Point(topLeftPoint.getX() + width, topLeftPoint.getY() - width));
         this.width = bottomRightPoint.getX() - topLeftPoint.getX();
     }
 

@@ -9,14 +9,23 @@ public class Rectangle extends Figure {
     // bottom right point
     protected Point bottomRightPoint;
 
-    public Rectangle(Point topLeftPoint, Point bottomRightPoint) {
-        if(topLeftPoint.getX() < bottomRightPoint.getX()
-                || topLeftPoint.getY() > bottomRightPoint.getY()) {
+    protected Rectangle(String name, Point topLeftPoint, Point bottomRightPoint) {
+        super(name);
+        if (topLeftPoint.getX() >= bottomRightPoint.getX()
+                || topLeftPoint.getY() <= bottomRightPoint.getY()) {
             throw new RuntimeException("Illegal points for rectangle.");
         }
 
         this.topLeftPoint = topLeftPoint;
         this.bottomRightPoint = bottomRightPoint;
+    }
+
+    public Rectangle(Point topLeftPoint, Point bottomRightPoint) {
+        this("Rectangle", topLeftPoint, bottomRightPoint);
+    }
+
+    public Line getDiagonal() {
+        return new Line(topLeftPoint, bottomRightPoint);
     }
 
     @Override
@@ -29,7 +38,7 @@ public class Rectangle extends Figure {
     }
 
     public final int height() {
-        return bottomRightPoint.getY() - topLeftPoint.getY();
+        return topLeftPoint.getY() - bottomRightPoint.getY();
     }
 
     @Override

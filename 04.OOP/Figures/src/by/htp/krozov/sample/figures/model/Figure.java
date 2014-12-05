@@ -7,7 +7,7 @@ public abstract class Figure {
     private final String name;
 
     public Figure() {
-        name = "Figure";
+        this(null);
     }
 
     public Figure(String name) {
