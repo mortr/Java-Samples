@@ -13,10 +13,6 @@ public class Vector3D extends Vector {
         this.z = z;
     }
 
-    public Vector3D(Vector vector) {
-        super(vector.getX(), vector.getY());
-    }
-
     public int getZ() {
         return z;
     }
@@ -25,7 +21,8 @@ public class Vector3D extends Vector {
         return super.scalarProduct(v) + v.z * this.z;
     }
 
+    @Override
     public double length() {
-        return Math.hypot(super.length(), z);
+        return Math.sqrt(x * x + y * y + z * z);
     }
 }

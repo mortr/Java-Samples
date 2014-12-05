@@ -6,10 +6,11 @@ import com.sun.istack.internal.NotNull;
  * Vector in 2D.
  */
 public class Vector {
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
 
     public Vector(int x, int y) {
+        // Неявный вызов конструктора суперкласса
         this.x = x;
         this.y = y;
     }
@@ -26,9 +27,6 @@ public class Vector {
         return v.x * this.x + v.y * this.y;
     }
 
-    /**
-     * Compute length of vector in coordinates.
-     */
     public double length() {
         return Math.hypot(x, y);
     }
