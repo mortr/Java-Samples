@@ -1,14 +1,17 @@
-apply plugin: 'java'
-apply plugin: 'application'
+apply plugin: 'java' // Plugin for Java
+apply plugin: 'application' // Plugin for executable JAR
 
+// Absolute name of main class.
 mainClassName = 'by.htp.krozov.sample.gradle.Main'
 
-version = '1.0'
-
+// Repositories with remote artifacts (libraries)
 repositories {
     mavenCentral()
 }
 
+// Dependencies for project (library from repositories, local libraries or submodule)
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+//    Short form of remote dependency
+//    testCompile 'junit:junit:4.11'
 }
