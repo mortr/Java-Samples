@@ -26,6 +26,10 @@ public class Main {
         System.out.printf("Name:%s\n\tperimeter: %.2f\n\tsquare: %.2f",
                           figure.getName(), figure.perimeter(), figure.square())
                 .println();
+        // Bad code. Output of print based on instanceof method, that's broke code flexibility
+        // Right way to do this it's add new method in Figure class that can
+        // convert to String(maybe better use toString()) method
+        // or print to default output information about object..
         if (figure instanceof Square) {
             Rectangle rectangle = (Rectangle) figure;
             System.out.printf("\tdiagonal length: %.2f\n", rectangle.getDiagonal().length());

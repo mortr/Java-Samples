@@ -10,7 +10,7 @@ public class Vector {
     protected int y;
 
     public Vector(int x, int y) {
-        // Неявный вызов конструктора суперкласса
+        // Implicit call default superclass constructor
         this.x = x;
         this.y = y;
     }

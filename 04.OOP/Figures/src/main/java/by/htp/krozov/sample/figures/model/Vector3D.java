@@ -9,6 +9,7 @@ public class Vector3D extends Vector {
     private int z;
 
     public Vector3D(int x, int y, int z) {
+        // Explicit call superclass constructor
         super(x, y);
         this.z = z;
     }
