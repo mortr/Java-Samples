@@ -1,6 +1,6 @@
 package by.htp.krozov.sample.devicetester;
 
-import by.htp.krozov.sample.devicetester.model.Device;
+import by.htp.krozov.sample.devicetester.model.TestDevice;
 import by.htp.krozov.sample.devicetester.model.MobilePhone;
 
 /**
@@ -12,15 +12,16 @@ public class Main {
         DeviceTester tester = new DeviceTester();
 
         //Create annonyms
-        tester.setFailedListener(
-                new DeviceTester.FailedListener() {
-                    @Override
-                    public void onTestFail(Device device) {
-                        System.out.println("Test failed to device " + device + '.');
-                    }
-                });
+        DeviceTester.OnFailedListener onFailedListener = new DeviceTester.OnFailedListener() {
+            @Override
+            public void onTestFail(TestDevice device) {
+                System.out.println("Test failed to device " + device + '.');
+            }
+        };
+        tester.setOnFailedListener(
+                onFailedListener);
 
-        Device nexus5Device = new MobilePhone("LG", "Nexus 5", "test_serial", "1212fa");
-        tester.test(nexus5Device);
+        TestDevice nexus5TestDevice = new MobilePhone("LG", "Nexus 5", "test_serial", "1212fa");
+        tester.test(nexus5TestDevice);
     }
 }

@@ -1,6 +1,6 @@
 package by.htp.krozov.sample.devicetester;
 
-import by.htp.krozov.sample.devicetester.model.Device;
+import by.htp.krozov.sample.devicetester.model.TestDevice;
 
 /**
  * Created by krozov on 12/24/13.
@@ -8,7 +8,7 @@ import by.htp.krozov.sample.devicetester.model.Device;
 public class DeviceTester {
 
     private boolean logEnable = true;
-    private FailedListener failedListener;
+    private OnFailedListener onFailedListener;
 
     public boolean isLogEnable() {
         return logEnable;
@@ -18,25 +18,31 @@ public class DeviceTester {
         this.logEnable = enable;
     }
 
-    public void test(Device... devices) {
+    public int test(TestDevice... testDevices) {
         int testSuccess = 0;
-        for (Device device : devices) {
-            if (device.turnOn()
-                    && device.test()
-                    && device.turnOff()) {
+        for (TestDevice testDevice : testDevices) {
+            if (testDevice.turnOn()
+                    && testDevice.test()
+                    && testDevice.turnOff()) {
                 testSuccess++;
-            } else if (failedListener != null) {
-                failedListener.onTestFail(device);
+            } else if (onFailedListener != null) {
+                onFailedListener.onTestFail(testDevice);
             }
         }
-        System.out.printf("Тест прошел успешно %d, провален - %s.\n", testSuccess, devices.length - testSuccess);
+
+        if (logEnable) {
+            System.out.printf("Тест прошел успешно %d, провален - %s.\n",
+                              testSuccess, testDevices.length - testSuccess);
+        }
+
+        return testSuccess;
     }
 
-    public void setFailedListener(FailedListener l) {
-        this.failedListener = l;
+    public void setOnFailedListener(OnFailedListener l) {
+        this.onFailedListener = l;
     }
 
-    public interface FailedListener {
-        void onTestFail(Device device);
+    public interface OnFailedListener {
+        void onTestFail(TestDevice testDevice);
     }
 }

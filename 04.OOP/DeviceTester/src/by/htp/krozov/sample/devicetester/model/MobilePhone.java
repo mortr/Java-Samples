@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by krozov on 12/23/13.
  */
-public class MobilePhone extends CommonDevice {
+public class MobilePhone extends CommonTestDevice {
 
     private String emei;
 

@@ -3,14 +3,14 @@ package by.htp.krozov.sample.devicetester.model;
 /**
  * Created by krozov on 12/23/13.
  */
-public abstract class CommonDevice implements Device {
+public abstract class CommonTestDevice implements TestDevice {
     protected String vendor;
     protected String model;
     protected String serialNumber;
 
     private boolean on;
 
-    public CommonDevice(String vendor, String model, String serialNumber) {
+    public CommonTestDevice(String vendor, String model, String serialNumber) {
         this.vendor = vendor;
         this.model = model;
         this.serialNumber = serialNumber;

@@ -3,11 +3,11 @@ package by.htp.krozov.sample.devicetester.model;
 /**
  * Device for test.
  */
-public interface Device {
+public interface TestDevice {
 
     boolean turnOn();
 
-    abstract boolean turnOff();
+    boolean turnOff();
 
     boolean test();
 }
