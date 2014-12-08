@@ -1,7 +1,7 @@
 package by.htp.krozov.sample.devicetester.model;
 
 /**
- * Created by krozov on 12/23/13.
+ * Device for test.
  */
 public interface Device {
 
