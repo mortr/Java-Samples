@@ -7,7 +7,7 @@ public interface Device {
 
     boolean turnOn();
 
-    boolean turnOff();
+    abstract boolean turnOff();
 
     boolean test();
 }

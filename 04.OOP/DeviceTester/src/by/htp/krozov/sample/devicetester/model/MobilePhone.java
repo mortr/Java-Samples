@@ -9,12 +9,11 @@ public class MobilePhone extends CommonDevice {
 
     private String emei;
 
-    private Random random;
+    private final Random random = new Random();
 
     public MobilePhone(String vendor, String model, String serialNumber, String emei) {
         super(vendor, model, serialNumber);
         this.emei = emei;
-        this.random = random;
     }
 
     @Override
