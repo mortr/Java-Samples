@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 
 /**
  * Created by krozov on 08.12.14.
  */
-public class User implements Comparable<User>, Cloneable {
+public class User implements Comparable<User>, Cloneable, Serializable {
     private String name;
     private String surname;
     private Date birthDate;

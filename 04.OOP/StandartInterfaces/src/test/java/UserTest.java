@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -55,5 +56,13 @@ public class UserTest {
 
         Arrays.sort(users, new User.BirthDateComparator());
         Assert.assertArrayEquals(new User[]{user1, user2, user3}, users);
+    }
+
+    @Test
+    public void testInterfaceImplementation() throws Exception {
+        User user = new User("Ivan", " Ivanov", new Date());
+        Assert.assertTrue("User not implement Serializable", user instanceof Serializable);
+        Assert.assertTrue("User not implement Comparable", user instanceof Comparable);
+        Assert.assertTrue("User not implement Cloneable", user instanceof Cloneable);
     }
 }
