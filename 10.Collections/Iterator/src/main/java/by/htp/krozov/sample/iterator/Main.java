@@ -1,6 +1,10 @@
 package by.htp.krozov.sample.iterator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by krozov on 11.12.14.
@@ -20,6 +24,22 @@ public class Main {
 
         int sumForEach = sumForEach(vector);
         System.out.println("Vector items sum = " + sumForEach);
+    }
+
+    private static int getMaximum(Vector vector) {
+        return Collections.max(vectorToList(vector));
+    }
+
+    private static int getMinimum(Vector vector) {
+        return Collections.min(vectorToList(vector));
+    }
+
+    private static List<Integer> vectorToList(Vector vector) {
+        List<Integer> list = new ArrayList<Integer>(vector.size());
+        for (int value : vector) {
+            list.add(value);
+        }
+        return list;
     }
 
     private static int sumWhile(Vector vector) {

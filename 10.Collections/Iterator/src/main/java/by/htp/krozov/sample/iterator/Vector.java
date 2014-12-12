@@ -21,6 +21,10 @@ public final class Vector implements Iterable<Integer> {
         values = new int[size];
     }
 
+    public int[] toArray(){
+        return Arrays.copyOf(values, values.length);
+    }
+
     /**
      * Get vector item in described position.
      *
