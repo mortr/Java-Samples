@@ -35,11 +35,6 @@ public class Main {
         Set<String> set = createSet(items);
         System.out.println(set);
         System.out.println();
-
-        System.out.println("Add item to SortedSet.");
-        SortedSet<String> sortedSet = createSortedSet(items);
-        System.out.println(sortedSet);
-        System.out.println();
     }
 
     private static List<String> createList(String... items) {
@@ -53,14 +48,6 @@ public class Main {
     private static Set<String> createSet(String... items) {
         Set<String> set = new HashSet<String>();
         Collections.addAll(set, items);
-        return set;
-    }
-
-    private static SortedSet<String> createSortedSet(String... items) {
-        SortedSet<String> set = new TreeSet<String>();
-        for (String item : items) {
-            set.add(item);
-        }
         return set;
     }
 }
