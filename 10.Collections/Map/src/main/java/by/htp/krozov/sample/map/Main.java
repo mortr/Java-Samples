@@ -25,10 +25,14 @@ public class Main {
         Map<Integer, String> indexStringMap = new HashMap<>(0);
         //Add all numbers that multiples by 100 from 100 to 1000. Key == value
         for (int i = 100; i <= 1000; i += 100) {
-            String value = String.valueOf(i);
+            String value = String.valueOf(i) + "value";
             items.add(new Pair<>(i, value));
             indexStringMap.put(i, value);
         }
+
+        System.out.println("Added values:");
+        System.out.println(items);
+        System.out.println();
 
         System.out.println("Map keys:");
         Set<Integer> keys = indexStringMap.keySet();
