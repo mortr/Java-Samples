@@ -16,7 +16,6 @@ public class StringUtils {
 
         List<Double> numbers = new ArrayList<Double>();
         while (matcher.find()) {
-            int groups = matcher.groupCount();
             String number = text.substring(matcher.start(), matcher.end());
             numbers.add(Double.parseDouble(number));
         }
