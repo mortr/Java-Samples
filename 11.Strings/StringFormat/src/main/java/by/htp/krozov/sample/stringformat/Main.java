@@ -19,13 +19,10 @@ public class Main {
     }
 
     private static void print(double[][] array) {
-        for (int row = 0; row < array.length; row++) {
-            for (int column = 0, lastColumn = array[row].length - 1;
-                 column < array[row].length;
-                 column++) {
-
-                System.out.print(array[row][column]);
-                if (column != lastColumn) {
+        for (double[] row : array) {
+            for (int i = 0, lastI = row.length - 1; i < row.length; i++) {
+                System.out.print(row[i]);
+                if (i != lastI) {
                     System.out.print("  ");
                 }
             }
@@ -34,13 +31,10 @@ public class Main {
     }
 
     private static void printFormat(double[][] array) {
-        for (int row = 0; row < array.length; row++) {
-            for (int column = 0, lastColumn = array[row].length - 1;
-                 column < array[row].length;
-                 column++) {
-
-                System.out.printf("%6.2f", array[row][column]);
-                if (column != lastColumn) {
+        for (double[] row : array) {
+            for (int i = 0, lastI = row.length - 1; i < row.length; i++) {
+                System.out.printf("%6.2f", row[i]);
+                if (i != lastI) {
                     System.out.print("  ");
                 }
             }
