@@ -11,11 +11,12 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
     static double[] searchNumbers(String text) {
-        Pattern pattern = Pattern.compile("[+-]?\\d+(\\.?\\d+)?");
+        Pattern pattern = Pattern.compile("[+-]?\\d+\\.?\\d*");
         Matcher matcher = pattern.matcher(text);
 
         List<Double> numbers = new ArrayList<Double>();
         while (matcher.find()) {
+            int groups = matcher.groupCount();
             String number = text.substring(matcher.start(), matcher.end());
             numbers.add(Double.parseDouble(number));
         }
