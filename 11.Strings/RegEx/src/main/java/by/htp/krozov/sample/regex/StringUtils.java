@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
     static double[] searchNumbers(String text) {
-        Pattern pattern = Pattern.compile("[+-]?\\d+\\.?\\d*");
+        Pattern pattern = Pattern.compile("[+-]?(\\.\\d+|\\d+\\.?\\d*)");
         Matcher matcher = pattern.matcher(text);
 
         List<Double> numbers = new ArrayList<Double>();

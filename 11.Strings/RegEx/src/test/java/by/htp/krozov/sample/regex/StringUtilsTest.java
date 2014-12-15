@@ -12,12 +12,15 @@ import org.junit.runners.JUnit4;
 public class StringUtilsTest {
     @Test
     public void testSearchNumber() throws Exception {
-        String text = "Try to compute 320.0 multiply on -712. Result is -227840.001.";
+        String text = "320.0 -712 -227840.001 -0.17 0.12 .1";
         double[] numbers = StringUtils.searchNumbers(text);
         double[] expectedNumbers = {
                 320.0,
                 -712,
-                -227840.001
+                -227840.001,
+                -0.17,
+                0.12,
+                .1
         };
         Assert.assertArrayEquals(expectedNumbers, numbers, 10E-1);
     }
