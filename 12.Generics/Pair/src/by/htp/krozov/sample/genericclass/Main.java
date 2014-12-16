@@ -1,4 +1,4 @@
-package by.htp.krozov.sample.generics;
+package by.htp.krozov.sample.genericclass;
 
 public class Main {
 
