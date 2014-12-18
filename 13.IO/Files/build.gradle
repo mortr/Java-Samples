@@ -1,0 +1,6 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'by.htp.krozov.samples.files.Main'
+
+sourceCompatibility = 1.7
