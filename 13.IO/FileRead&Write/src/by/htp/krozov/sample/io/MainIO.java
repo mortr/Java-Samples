@@ -1,5 +1,7 @@
 package by.htp.krozov.sample.io;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -35,22 +37,10 @@ public class MainIO {
     }
 
     private static void writeTextToFileByteStream(String text, File to) throws URISyntaxException {
-        OutputStream outStream = null;
-        try {
-            try {
-//                is = new BufferedInputStream(new FileInputStream(textFile)); //Create new input stream.
-                outStream = new FileOutputStream(to); //Create new input stream.
-                outStream.write(text.getBytes());
-            } catch (IOException e) {
-                System.out.printf("Error while write file: '%s'.", e).println();
-            } finally {
-                if (outStream != null) {
-                    outStream.flush();
-                    outStream.close();
-                }
-            }
+        try (OutputStream outStream = new FileOutputStream(to)) {//Create new input stream.
+            outStream.write(text.getBytes());
         } catch (IOException e) {
-            System.out.printf("Error close output stream: '%s'.", e).println();
+            System.out.printf("Error while write file: '%s'.", e).println();
         }
     }
 
@@ -58,7 +48,6 @@ public class MainIO {
         Writer writer = null;
         try {
             try {
-//                is = new BufferedInputStream(new FileInputStream(textFile)); //Create new input stream.
                 writer = new FileWriter(to); //Create new input stream.
                 writer.write(text);
             } catch (IOException e) {
@@ -75,11 +64,9 @@ public class MainIO {
     }
 
     private static void readFileByteStream(File from) throws URISyntaxException {
-        long startTime = System.nanoTime();
         InputStream is = null;
         try {
             try {
-//                is = new BufferedInputStream(new FileInputStream(textFile)); //Create new input stream.
                 is = new FileInputStream(from); //Create new input stream.
 
                 StringBuilder sb = new StringBuilder();// StringBuilder for put reading result.
@@ -90,9 +77,7 @@ public class MainIO {
                     sb.append(new String(buffer, 0, byteReadCount));
                 }
 
-                long duration = System.nanoTime() - startTime;
                 System.out.println(sb);
-                System.out.printf("Duration = %d nanoseconds.", duration);
             } catch (IOException e) {
                 System.out.printf("Error while read file: '%s'.", e).println();
             } finally {
@@ -106,12 +91,10 @@ public class MainIO {
     }
 
     private static void readFileCharStream(File from) throws URISyntaxException {
-        long startTime = System.nanoTime();
         Reader reader = null;
         try {
             try {
-//                is = new BufferedInputStream(new FileInputStream(textFile)); //Create new input stream.
-                reader = new FileReader(from); //Create new input stream.
+                Reader reader = new BufferedReader(new FileReader(from)); //Create new input stream.
 
                 StringBuilder sb = new StringBuilder();// StringBuilder for put reading result.
 
@@ -121,9 +104,7 @@ public class MainIO {
                     sb.append(buffer, 0, charReadCount);
                 }
 
-                long duration = System.nanoTime() - startTime;
-//                System.out.println(sb);
-                System.out.printf("Duration = %d nanoseconds.", duration);
+                System.out.println(sb);
             } catch (IOException e) {
                 System.out.printf("Error while read file: '%s'.", e).println();
             } finally {
