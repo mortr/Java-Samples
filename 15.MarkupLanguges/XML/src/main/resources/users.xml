@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+    <user>
+        <name>User1</name>
+        <orders>
+            <order>
+                <name>Pencil</name>
+                <delivered>false</delivered>
+                <order_date>7801293121</order_date>
+            </order>
+        </orders>
+        <email>user1@site.com</email>
+        <register_date>128405123</register_date>
+    </user>
+    <user>
+        <name>User2</name>
+        <orders>
+            <order>
+                <name>Galaxy S4</name>
+                <delivered>false</delivered>
+                <order_date>78293121</order_date>
+            </order>
+            <order>
+                <name>Galaxy S5</name>
+                <delivered>true</delivered>
+                <order_date>521293121</order_date>
+            </order>
+        </orders>
+        <email>user2@site.com</email>
+        <register_date>128505123</register_date>
+    </user>
+    <user>
+        <name>User3</name>
+        <orders>
+            <order>
+                <name>Moto 360</name>
+                <delivered>false</delivered>
+                <order_date>7801290231</order_date>
+            </order>
+            <order>
+                <name>LG G Watch</name>
+                <delivered>true</delivered>
+                <order_date>1231512</order_date>
+            </order>
+        </orders>
+        <email>user3@site.com</email>
+        <register_date>121605123</register_date>
+    </user>
+</users>
