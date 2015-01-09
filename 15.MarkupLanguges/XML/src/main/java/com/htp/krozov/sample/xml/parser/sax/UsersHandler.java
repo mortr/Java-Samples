@@ -3,9 +3,9 @@ package com.htp.krozov.sample.xml.parser.sax;
 import com.htp.krozov.sample.xml.model.Order;
 import com.htp.krozov.sample.xml.model.User;
 import com.htp.krozov.sample.xml.parser.UserNodes;
-import com.sun.org.apache.xml.internal.resolver.readers.SAXParserHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by krozov on 08.01.15.
  */
-public class UsersHandler extends SAXParserHandler implements UserNodes {
+public class UsersHandler extends DefaultHandler implements UserNodes {
     private List<User> users;
     private List<Order> tempOrders;
     private User tempUser;

@@ -22,8 +22,10 @@ import java.util.List;
  */
 public final class DomParserUtil implements UserNodes {
 
-    public static List<User> parse(InputStream is) throws ParserConfigurationException, IOException, SAXException {
-        DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+    public static List<User> parse(InputStream is)
+            throws ParserConfigurationException, IOException, SAXException {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document doc = documentBuilder.parse(is);
         NodeList usersNode = doc.getChildNodes().item(0).getChildNodes();
         return parseUsers(usersNode);
@@ -87,8 +89,9 @@ public final class DomParserUtil implements UserNodes {
         final int cnt = l.getLength();
         List<User> users = new ArrayList<User>(cnt);
         for (int i = 0; i < cnt; i++) {
-            if (TAG_USER.equals(l.item(i).getNodeName())) {
-                users.add(parseUser(l.item(i)));
+            Node node = l.item(i);
+            if (TAG_USER.equals(node.getNodeName())) {
+                users.add(parseUser(node));
             }
         }
         return users;
