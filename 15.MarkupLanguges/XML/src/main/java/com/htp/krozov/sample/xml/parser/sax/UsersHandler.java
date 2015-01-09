@@ -16,19 +16,21 @@ import java.util.List;
  * Created by krozov on 08.01.15.
  */
 public class UsersHandler extends DefaultHandler implements UserNodes {
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
     private List<Order> tempOrders;
     private User tempUser;
     private Order tempOrder;
     private StringBuilder text;
 
     @Override
+    public void startDocument() throws SAXException {
+        super.startDocument();
+    }
+
+    @Override
     public void startElement(String namespaceURI, String localName,
                              String qName, Attributes atts) throws SAXException {
-        switch (localName) {
-            case TAG_USERS:
-                users = new ArrayList<User>();
-                break;
+        switch (qName) {
 
             case TAG_USER:
                 tempUser = new User();
@@ -54,15 +56,14 @@ public class UsersHandler extends DefaultHandler implements UserNodes {
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-        text.append(ch, start, length);
+        if (text != null) {
+            text.append(ch, start, length);
+        }
     }
 
     @Override
     public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
-        switch (localName) {
-            case TAG_USERS:
-                users = Collections.unmodifiableList(users);
-                break;
+        switch (qName) {
 
             case TAG_USER:
                 users.add(tempUser);
@@ -101,6 +102,16 @@ public class UsersHandler extends DefaultHandler implements UserNodes {
                 } else {
                     tempUser.setName(text.toString());
                 }
+                break;
+        }
+
+        switch (localName){
+            case TAG_DELIVERED:
+            case TAG_ORDER_DATE:
+            case TAG_REGISTER_DATE:
+            case TAG_EMAIL:
+            case TAG_NAME:
+                text = null;
                 break;
         }
     }
